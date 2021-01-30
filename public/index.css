@@ -1,0 +1,105 @@
+body {
+  background: black;
+}
+
+.ratings {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 250px;
+}
+
+.monthHeaderContainer {
+  font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  text-transform: lowercase;
+  color: white;
+
+  width: 100%;
+  margin: 32px 0 8px 8px;
+
+  position: relative;
+}
+
+.monthHeaderContainer h1 {
+  position: absolute;
+  margin: 0;
+  transform: translateX(-110%) translateY(20%);
+}
+
+.ratingContainer {
+  width: 256px;
+  height: 256px;
+  margin: 8px;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  border: 1px solid #333;
+  background: #161616;
+  border-radius: 2px;
+
+  position:relative;
+}
+
+.ratingContainer aside {
+  position: absolute;
+  font-family: 'Helvetica Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  text-transform: lowercase;
+  color: white;
+
+  top: 16px;
+  left: 16px;
+  right: 40px;
+}
+
+.ratingContainer aside h1 {
+  margin: 0 0 0px 0;
+}
+
+.ratingContainer aside h2 {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.ratingContainer summary {
+  position: absolute;
+
+  right: 4px;
+  bottom: 10px;
+  font-size: 48px;
+}
+
+.ratingContainer img {
+  position: absolute;
+
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.ratingContainer img:hover {
+  opacity: 0.3;
+}
+
+.ratingContainer img.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 1120px) { 
+  .ratings {
+    margin: 0 auto;
+  }
+
+  .monthHeaderContainer {
+    margin: 64px 0 8px 8px;
+    position: unset;
+  }
+  
+  .monthHeaderContainer h1 {
+    position: unset;
+    transform: unset;
+  }
+}

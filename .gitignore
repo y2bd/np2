@@ -1,0 +1,4 @@
+node_modules/
+public/dist/**/*.map
+src/secret.ts
+src/config.json

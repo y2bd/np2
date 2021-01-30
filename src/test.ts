@@ -1,0 +1,1 @@
+export const foo = "yss222sdfhello";

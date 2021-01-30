@@ -1,0 +1,20 @@
+{
+  "name": "now-playing-rym",
+  "version": "0.1.0",
+  "description": "",
+  "main": "public/dist/index.js",
+  "scripts": {
+    "watch": "node watch.js",
+    "serve": "serve --cors public",
+    "dev": "concurrently \"npm:watch\" \"npm:serve\""
+  },
+  "keywords": [],
+  "author": "y2bd",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar": "3.5.1",
+    "concurrently": "5.3.0",
+    "esbuild": "0.8.33",
+    "serve": "11.3.2"
+  }
+}
