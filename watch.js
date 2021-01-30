@@ -15,7 +15,7 @@ const build = async () => {
     await service.build({
       color: true,
       entryPoints: [path.resolve(__dirname, "src/index.ts")],
-      outfile: path.resolve(__dirname, "public/dist/index.js"),
+      outfile: path.resolve(__dirname, "docs/dist/index.js"),
       // minify: true,
       bundle: true,
       sourcemap: 'external',
