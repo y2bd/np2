@@ -2,16 +2,18 @@
   // src/config.json
   var rymProfile = "y2bd";
   var lastFmApiKey = "7f87d000a5c717ff936069c4324183d4";
+  var __help__ = "fill in your details and remove the .template";
   var config_default = {
     rymProfile,
-    lastFmApiKey
+    lastFmApiKey,
+    __help__
   };
 
   // src/lastfm.ts
   async function fetchAlbumArtUrl({artist, album, thumbnailUrl}) {
     const eArtist = encodeURIComponent(artist ?? "");
     const eAlbum = encodeURIComponent(album ?? "");
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${config_default.lastFmApiKey}&artist=${eArtist}&album=${eAlbum}&autocorrect=1&format=json`;
+    const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${config_default.lastFmApiKey}&artist=${eArtist}&album=${eAlbum}&autocorrect=1&format=json`;
     const rawResponse = await fetch(apiUrl);
     const jsonResponse = await rawResponse.json();
     if (jsonResponse.error) {
@@ -110,7 +112,7 @@
 
   // src/rym.ts
   function fetchRatings(profileName, page) {
-    const url = `https://cors-anywhere.herokuapp.com/https://rateyourmusic.com/collection/${profileName}/r0.5-5.0,ss.dd/${page}`;
+    const url = `https://holy-star-bc5b.arewecoolyet.workers.dev/collection/${profileName}/r0.5-5.0,ss.dd/${page}`;
     return fetch(url).then((response) => response.text()).then((htmlText) => {
       const domParser = new DOMParser();
       const document2 = domParser.parseFromString(htmlText, "text/html");
