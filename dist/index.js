@@ -13,7 +13,7 @@
   async function fetchAlbumArtUrl({artist, album, thumbnailUrl}) {
     const eArtist = encodeURIComponent(artist ?? "");
     const eAlbum = encodeURIComponent(album ?? "");
-    const apiUrl = `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${config_default.lastFmApiKey}&artist=${eArtist}&album=${eAlbum}&autocorrect=1&format=json`;
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${config_default.lastFmApiKey}&artist=${eArtist}&album=${eAlbum}&autocorrect=1&format=json`;
     const rawResponse = await fetch(apiUrl);
     const jsonResponse = await rawResponse.json();
     if (jsonResponse.error) {
