@@ -58,7 +58,7 @@
     container.appendChild(rating);
     const albumArt = document.createElement("img");
     albumArt.addEventListener("click", () => albumArt.classList.toggle("hidden"));
-    albumArt.addEventListener("dblclick", () => window.open(releaseLink.href));
+    albumArt.addEventListener("dblclick", () => window.open("https://rateyourmusic.com/" + releaseLink.href));
     container.append(albumArt);
     const update = (newProps) => {
       if (newProps.album) {
