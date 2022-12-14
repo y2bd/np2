@@ -74,7 +74,7 @@
         albumArt.src = newProps.thumbnailUrl;
       }
       if (newProps.releaseUrl) {
-        releaseLink.href = + "https://rateyourmusic.com/" + newProps.releaseUrl;
+        releaseLink.href = "https://rateyourmusic.com/" + newProps.releaseUrl;
       }
     };
     update(initialProps);
