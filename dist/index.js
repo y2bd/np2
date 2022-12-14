@@ -48,8 +48,11 @@
     const description = document.createElement("aside");
     const artist = document.createElement("h1");
     const album = document.createElement("h2");
+    const releaseLink = document.createElement("a");
+    releaseLink.text="📎";
     description.appendChild(artist);
     description.appendChild(album);
+    description.append(releaseLink);
     container.appendChild(description);
     const rating = document.createElement("summary");
     container.appendChild(rating);
@@ -68,6 +71,9 @@
       }
       if (newProps.thumbnailUrl) {
         albumArt.src = newProps.thumbnailUrl;
+      }
+      if (newProps.releaseUrl) {
+        releaseLink.href = newProps.releaseUrl;
       }
     };
     update(initialProps);
