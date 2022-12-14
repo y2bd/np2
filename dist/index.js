@@ -58,7 +58,7 @@
     container.appendChild(rating);
     const albumArt = document.createElement("img");
     albumArt.addEventListener("click", () => albumArt.classList.toggle("hidden"));
-    albumArt.addEventListener("dblclick", () => window.open(releaseLink.url));
+    albumArt.addEventListener("dblclick", () => window.open(releaseLink.href));
     container.append(albumArt);
     const update = (newProps) => {
       if (newProps.album) {
