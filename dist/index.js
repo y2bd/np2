@@ -11,8 +11,8 @@
 
   // src/lastfm.ts
   async function fetchAlbumArtUrl({artist, album, thumbnailUrl}) {
-    const artistMatch = artist.replace(/.+( [\[\c].+[\]\)]){0,1}$/ig, '$1');
-    const albumMatch = artist.replace(/.+( [\[\c].+[\]\)]){0,1}$/ig, '$1');
+    const artistMatch = artist.replace(/(.+)( [\[\(].+[\]\)])$/ig, '$1');
+    const albumMatch = album.replace(/(.+)( [\[\(].+[\]\)])$/ig, '$1');
     
     const eArtist = encodeURIComponent(artistMatch ?? "");
     const eAlbum = encodeURIComponent(albumMatch ?? "");
