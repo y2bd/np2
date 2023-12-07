@@ -11,8 +11,11 @@
 
   // src/lastfm.ts
   async function fetchAlbumArtUrl({artist, album, thumbnailUrl}) {
-    const eArtist = encodeURIComponent(artist ?? "");
-    const eAlbum = encodeURIComponent(album ?? "");
+    const artistMatch = artist.replace(/.+( [\[\c].+[\]\)]){0,1}$/ig, '$1');
+    const albumMatch = artist.replace(/.+( [\[\c].+[\]\)]){0,1}$/ig, '$1');
+    
+    const eArtist = encodeURIComponent(artistMatch ?? "");
+    const eAlbum = encodeURIComponent(albumMatch ?? "");
     const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${config_default.lastFmApiKey}&artist=${eArtist}&album=${eAlbum}&autocorrect=1&format=json`;
     const rawResponse = await fetch(apiUrl);
     const jsonResponse = await rawResponse.json();
